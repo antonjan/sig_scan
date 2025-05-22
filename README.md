@@ -16,3 +16,5 @@ Libraery with exsyended frequency is avalable here https://github.com/librtlsdr/
     sudo make install
     sudo ldconfig
     
+# Running SIG Scanner
+python gsm_scanner_new2.py
