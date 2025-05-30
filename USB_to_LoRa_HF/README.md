@@ -9,4 +9,4 @@ The USB-TO-LoRa-xF is a wireless data transfer unit with USB interfaces based on
 3. Open the Update software, select the correct COM port and press 'Open COM'.
 4. Press on 'Open File' and choose the latest firmware for the corresponding model, such as USB-TO-LoRa-HF-V12.ws, and click the 'Update' button to update.
 
-<img src="USB-TO-LoRa-xF-Update01.jpg" alt="Update01" width="500" height="333">
+<img src="USB-TO-LoRa-xF-Update01.jpg" alt="Update01" width="500" height="800">
