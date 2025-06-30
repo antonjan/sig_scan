@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simulated Signal Alerts</title>
+  <title>Signal Alerts Dashboard</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,12 +17,12 @@
       margin-top: 20px;
     }
     th, td {
-      padding: 10px;
-      border: 1px solid #ccc;
+      padding: 12px;
+      border: 1px solid #ddd;
       text-align: center;
     }
     th {
-      background-color: #eee;
+      background-color: #f4f4f4;
     }
     tr:nth-child(even) {
       background-color: #f9f9f9;
@@ -30,8 +30,7 @@
   </style>
 </head>
 <body>
-  <h1>Simulated LoRa Alerts</h1>
-
+  <h1>Signal Alert Dashboard</h1>
   <table>
     <thead>
       <tr>
@@ -46,24 +45,24 @@
 
   <script>
     async function fetchAlerts() {
-      const res = await fetch('/alerts');
-      const alerts = await res.json();
-      const body = document.getElementById('alert-table-body');
-      body.innerHTML = '';
+      const response = await fetch('/alerts');
+      const data = await response.json();
+      const tableBody = document.getElementById('alert-table-body');
+      tableBody.innerHTML = '';
 
-      alerts.slice().reverse().forEach(a => {
+      data.reverse().forEach(alert => {
         const row = `<tr>
-          <td>${a.alert}</td>
-          <td>${a.frequency}</td>
-          <td>${a.trigger_level}</td>
-          <td>${a.timestamp}</td>
+          <td>${alert.alert}</td>
+          <td>${alert.frequency}</td>
+          <td>${alert.trigger_level}</td>
+          <td>${alert.timestamp}</td>
         </tr>`;
-        body.innerHTML += row;
+        tableBody.innerHTML += row;
       });
     }
 
-    fetchAlerts();
     setInterval(fetchAlerts, 2000);
+    fetchAlerts();
   </script>
 </body>
 </html>
