@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signal Alerts Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Signal Alert Dashboard</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Alert</th>
+        <th>Frequency (MHz)</th>
+        <th>Trigger Level (dB)</th>
+        <th>Timestamp</th>
+      </tr>
+    </thead>
+    <tbody id="alert-table-body"></tbody>
+  </table>
+
+  <script>
+    async function fetchAlerts() {
+      const response = await fetch('/alerts');
+      const data = await response.json();
+      const tableBody = document.getElementById('alert-table-body');
+      tableBody.innerHTML = '';
+
+      data.reverse().forEach(alert => {
+        const row = `<tr>
+          <td>${alert.alert}</td>
+          <td>${alert.frequency}</td>
+          <td>${alert.trigger_level}</td>
+          <td>${alert.timestamp}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+      });
+    }
+
+    setInterval(fetchAlerts, 2000);
+    fetchAlerts();
+  </script>
+</body>
+</html>
+
