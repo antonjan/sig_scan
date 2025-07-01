@@ -16,6 +16,7 @@ Libraery with exsyended frequency is avalable here https://github.com/librtlsdr/
     sudo make install
     sudo ldconfig
 # Setting up python 
+    cd Documents/SX126X_LoRa_HAT_Code/raspberrypi/python/
     source ~/sdr-env/bin/activate
 # Running SIG Scanner
 python gsm_scanner_new2.py
