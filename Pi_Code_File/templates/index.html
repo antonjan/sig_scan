@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulated Signal Alerts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    th {
+      background-color: #eee;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simulated LoRa Alerts</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Alert</th>
+        <th>Frequency (MHz)</th>
+        <th>Trigger Level (dB)</th>
+        <th>Timestamp</th>
+      </tr>
+    </thead>
+    <tbody id="alert-table-body"></tbody>
+  </table>
+
+  <script>
+    async function fetchAlerts() {
+      const res = await fetch('/alerts');
+      const alerts = await res.json();
+      const body = document.getElementById('alert-table-body');
+      body.innerHTML = '';
+
+      alerts.slice().reverse().forEach(a => {
+        const row = `<tr>
+          <td>${a.alert}</td>
+          <td>${a.frequency}</td>
+          <td>${a.trigger_level}</td>
+          <td>${a.timestamp}</td>
+        </tr>`;
+        body.innerHTML += row;
+      });
+    }
+
+    fetchAlerts();
+    setInterval(fetchAlerts, 2000);
+  </script>
+</body>
+</html>
+

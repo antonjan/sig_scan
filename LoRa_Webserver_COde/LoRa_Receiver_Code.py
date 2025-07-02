@@ -5,15 +5,7 @@ import re
 from flask import Flask, render_template_string
 
 # Initialize LoRa node (adjust serial_num as needed)
-node = sx126x.sx126x(
-    serial_num="/dev/ttyS0",  # Change if you're using a different port
-    freq=868,
-    addr=0,
-    power=22,
-    rssi=True,
-    air_speed=2400,
-    relay=False
-)
+node = sx126x.sx126x(serial_num="/dev/ttyS0", freq=868, addr=0, power=22, rssi=True, air_speed=2400, relay=False)
 
 # Shared alert list and threading lock
 alerts = []
