@@ -1,36 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Simulated Signal Alerts</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    h1 {
-      color: #333;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    th, td {
-      padding: 10px;
-      border: 1px solid #ccc;
-      text-align: center;
-    }
-    th {
-      background-color: #eee;
-    }
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LoRa Signal Alerts</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  color: #333;
+}
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+h1 { margin: 0; font-size: 1.8em; }
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.chart-block {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+canvas {
+  width: 100%;
+  height: 250px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+}
+th {
+  background: #34495e;
+  color: white;
+  font-weight: 600;
+}
+tr:hover { background-color: #eaeaea; }
+.loading {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #888;
+}
+</style>
 </head>
 <body>
-  <h1>Simulated LoRa Alerts</h1>
+<header>
+  <h1>LoRa Signal Alerts Dashboard</h1>
+</header>
+
+<div class="container">
+  <div class="chart-grid">
+    <div class="chart-block">
+      <h3>2G Low (900–950)</h3>
+      <canvas id="chart-2G_LOW"></canvas>
+    </div>
+    <div class="chart-block">
+      <h3>2G High (1800–1900)</h3>
+      <canvas id="chart-2G_HIGH"></canvas>
+    </div>
+    <div class="chart-block">
+      <h3>3G</h3>
+      <canvas id="chart-3G"></canvas>
+    </div>
+    <div class="chart-block">
+      <h3>4G</h3>
+      <canvas id="chart-4G"></canvas>
+    </div>
+    <div class="chart-block">
+      <h3>5G</h3>
+      <canvas id="chart-5G"></canvas>
+    </div>
+  </div>
+
+  <div class="loading" id="loading">Loading alerts...</div>
 
   <table>
     <thead>
@@ -38,33 +106,188 @@
         <th>Alert</th>
         <th>Frequency (MHz)</th>
         <th>Trigger Level (dB)</th>
+        <th>Average dB</th>
         <th>Timestamp</th>
       </tr>
     </thead>
     <tbody id="alert-table-body"></tbody>
   </table>
+</div>
 
-  <script>
-    async function fetchAlerts() {
-      const res = await fetch('/alerts');
-      const alerts = await res.json();
-      const body = document.getElementById('alert-table-body');
-      body.innerHTML = '';
+<!-- Audio element and toggle button -->
+<audio id="alert-audio" src="/static/Chirp_Sound.mp3" preload="auto"></audio>
+<button onclick="toggleAlarm()" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; font-size: 1em;">
+  🔔 Toggle Alarm
+</button>
 
-      alerts.slice().reverse().forEach(a => {
-        const row = `<tr>
-          <td>${a.alert}</td>
-          <td>${a.frequency}</td>
-          <td>${a.trigger_level}</td>
-          <td>${a.timestamp}</td>
-        </tr>`;
-        body.innerHTML += row;
-      });
+<script>
+const BAND_RANGES = {
+  '2G_LOW': [900, 950],
+  '2G_HIGH': [1800, 1900],
+  '3G': [1920, 2170],
+  '4G': [2300, 2700],
+  '5G': [3300, 3800]
+};
+
+const chartConfigs = {
+  '2G_LOW': new Chart(document.getElementById('chart-2G_LOW').getContext('2d'), getChartConfig('2G_LOW')),
+  '2G_HIGH': new Chart(document.getElementById('chart-2G_HIGH').getContext('2d'), getChartConfig('2G_HIGH')),
+  '3G': new Chart(document.getElementById('chart-3G').getContext('2d'), getChartConfig('3G')),
+  '4G': new Chart(document.getElementById('chart-4G').getContext('2d'), getChartConfig('4G')),
+  '5G': new Chart(document.getElementById('chart-5G').getContext('2d'), getChartConfig('5G'))
+};
+
+function getChartConfig(label) {
+  const [minFreq, maxFreq] = BAND_RANGES[label];
+  return {
+    type: 'scatter',
+    data: {
+      datasets: [
+        {
+          label: `${label} Signal Power`,
+          data: [],
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          showLine: false,
+          spanGaps: false,
+          pointRadius: 4
+        },
+        {
+          label: 'Threshold',
+          data: [
+            { x: minFreq, y: -10 },
+            { x: maxFreq, y: -10 }
+          ],
+          borderColor: 'red',
+          borderWidth: 1,
+          fill: false,
+          pointRadius: 0,
+          type: 'line'
+        }
+      ]
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top'
+        }
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Frequency (MHz)' },
+          type: 'linear',
+          position: 'bottom',
+          min: minFreq,
+          max: maxFreq
+        },
+        y: {
+          title: { display: true, text: 'Power (dBi)' },
+          min: -30,
+          max: 0,
+          reverse: false
+        }
+      }
     }
+  };
+}
 
-    fetchAlerts();
-    setInterval(fetchAlerts, 2000);
-  </script>
+function getBandKey(band, freq) {
+  if (band === '2G') {
+    if (freq >= 900 && freq <= 950) return '2G_LOW';
+    if (freq >= 1800 && freq <= 1900) return '2G_HIGH';
+  }
+  return band;
+}
+
+let lastAlertTimestamp = null;
+let alarmEnabled = true;
+
+function toggleAlarm() {
+  alarmEnabled = !alarmEnabled;
+  alert("Alarm is now " + (alarmEnabled ? "enabled" : "disabled"));
+}
+
+async function fetchThresholdsAndAlerts() {
+  try {
+    const [alertsRes, thresholdsRes] = await Promise.all([
+      fetch('/alerts'),
+      fetch('/thresholds')
+    ]);
+    const alerts = await alertsRes.json();
+    const thresholds = await thresholdsRes.json();
+    const body = document.getElementById('alert-table-body');
+    const loading = document.getElementById('loading');
+    body.innerHTML = '';
+
+    const bandData = { '2G_LOW': [], '2G_HIGH': [], '3G': [], '4G': [], '5G': [] };
+
+    const now = new Date();
+
+    alerts.forEach(a => {
+      const freq = parseFloat(a.frequency.replace(/[^\d.]/g, ''));
+      const dbi = parseFloat(a.trigger_level);
+      const band = getBandKey(a.alert, freq);
+      const timestamp = new Date(a.timestamp);
+
+      if (bandData[band]) {
+        bandData[band].push({ x: freq, y: dbi });
+      }
+
+      const ageMin = (now - timestamp) / 60000;
+
+      // Fade red color logic: fresh = full red, fading over time
+      let opacity = 1.0;
+      if (ageMin < 5) opacity = 1.0;
+      else if (ageMin < 15) opacity = 0.75;
+      else if (ageMin < 30) opacity = 0.5;
+      else if (ageMin < 60) opacity = 0.25;
+      else opacity = 0.1;
+
+      const color = `rgba(255, 0, 0, ${opacity})`;
+
+      const row = `<tr style="background-color:${color};">
+        <td>${a.alert}</td>
+        <td>${a.frequency}</td>
+        <td>${a.trigger_level}</td>
+        <td>${a.avgDBi}</td>
+        <td>${a.timestamp}</td>
+      </tr>`;
+
+      // Play audio alert only on new alerts if enabled
+      if (!lastAlertTimestamp || a.timestamp > lastAlertTimestamp) {
+        lastAlertTimestamp = a.timestamp;
+        if (alarmEnabled) {
+          const audio = document.getElementById("alert-audio");
+          audio.currentTime = 0;
+          audio.play().catch(err => console.warn("Audio play failed:", err));
+        }
+      }
+
+      body.innerHTML += row;
+    });
+
+    Object.keys(chartConfigs).forEach(band => {
+      const chart = chartConfigs[band];
+      const [minFreq, maxFreq] = BAND_RANGES[band];
+      chart.data.datasets[0].data = bandData[band];
+      const threshold = thresholds[band.split('_')[0]] !== undefined ? thresholds[band.split('_')[0]] : -10;
+      chart.data.datasets[1].data = [
+        { x: minFreq, y: threshold },
+        { x: maxFreq, y: threshold }
+      ];
+      chart.update();
+    });
+
+    loading.style.display = 'none';
+  } catch (err) {
+    console.error("Failed to fetch alerts/thresholds", err);
+  }
+}
+
+fetchThresholdsAndAlerts();
+setInterval(fetchThresholdsAndAlerts, 2000);
+</script>
+
 </body>
 </html>
-

@@ -48,92 +48,84 @@ HTML_TEMPLATE = """
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trigger Mode Control</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #f1f1f1;
-            margin: 0;
-            padding: 1rem;
-        }
-
-        h2 {
-            text-align: center;
-            margin-top: 0;
-        }
-
-        form {
-            max-width: 400px;
-            margin: 1rem auto;
-            background: #1e1e1e;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        }
-
-        label {
-            display: block;
-            margin: 0.5rem 0 0.2rem;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 0.8rem;
-            border: none;
-            border-radius: 5px;
-            background-color: #2e2e2e;
-            color: #fff;
-        }
-
-        button {
-            width: 100%;
-            padding: 0.75rem;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            margin-top: 0.5rem;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .footer {
-            text-align: center;
-            font-size: 0.8rem;
-            color: #888;
-            margin-top: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trigger Mode Control</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #121212;
+      color: #f1f1f1;
+      margin: 0;
+      padding: 1rem;
+    }
+    h2 {
+      text-align: center;
+    }
+    form {
+      max-width: 400px;
+      margin: 1rem auto;
+      background: #1e1e1e;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #555;
+      border-radius: 5px;
+      background-color: #2c2c2c;
+      color: #fff;
+    }
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 2rem;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
-    <h2>Trigger Mode: {{ mode.upper() }}</h2>
-    
-    <form method="post" action="/toggle">
-        <button type="submit">Switch to {{ 'Manual' if mode == 'auto' else 'Auto' }}</button>
-    </form>
+  <h2>Trigger Mode: {{ mode.upper() }}</h2>
+  
+  <form method="post" action="/toggle">
+    <button type="submit">Switch to {{ 'Manual' if mode == 'auto' else 'Auto' }}</button>
+  </form>
 
-    {% if mode == 'manual' %}
-    <form method="post" action="/set_thresholds">
-        {% for band in bands %}
-            <label>{{ band }} Threshold (dB):</label>
-            <input type="text" name="{{ band }}" value="{{ thresholds[band] }}">
-        {% endfor %}
-        <button type="submit">Update Thresholds</button>
-    </form>
-    {% endif %}
+  {% if mode == 'manual' %}
+  <form method="post" action="/set_thresholds">
+    {% for band in bands %}
+      <label>{{ band }} Threshold (dB):</label>
+      <input type="text" name="{{ band }}" value="{{ thresholds[band] }}">
+    {% endfor %}
+    <button type="submit">Update Thresholds</button>
+  </form>
+  {% endif %}
 
-    <div class="footer">LoRa SDR Control Panel · Pi Zero 2 W</div>
+  <div class="footer">SDR Trigger Control Panel — Offline Mode</div>
 </body>
 </html>
 """
+
 
 
 @app.route("/", methods=["GET"])
@@ -170,6 +162,8 @@ def scan_band(freq_range, label):
         samples = sdr.read_samples(256*1024)
         power = 10 * np.log10(np.mean(np.abs(samples)**2))
         powers.append(power)
+        
+        print(f"Scanning {label}: {freq/1e6:.2f} MHz — Power = {power:.2f} dB")
 
         if trigger_mode['mode'] == 'manual':
             threshold = manual_thresholds[label]
@@ -190,7 +184,7 @@ def scan_band(freq_range, label):
             alert_message = json.dumps(alert_data).encode('utf-8')
             data = bytes([255, 255, 18, 255, 255, 12]) + alert_message
             lora.send(data)
-            print(f"ALERT: {label} {freq/1e6}MHz > {threshold:.2f}dB")
+            print(f"ALERT: {label} Strong Signal Detected {freq/1e6}MHz > {threshold:.2f}dB")
             detected = True
 
     power_history[label].extend(powers)
@@ -215,3 +209,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("Stopping...")
         sdr.close()
+
