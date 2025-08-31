@@ -66,3 +66,13 @@ The R828D is usually supplied in a 32-pin QFN package. Here’s the most commonl
         30	NC	Not Connected
 31	NC	Not Connected
 32	NC	Not Connected
+## Basic Connections
+
+    Antenna → Matching Network → Pin 14 (RF_IN)
+    Pin 11 (IFOUT) → RTL2832U IF Input
+    Pin 23 (SDA) & Pin 24 (SCL) → RTL2832U I²C (for control)
+    Pin 6 (XIN) & Pin 7 (XOUT) → 16 MHz Crystal (one end to XIN, other to XOUT, with load capacitors to GND)
+    All VCC Pins → 3.3V Power
+    All GND Pins → Ground Plane
+    Pin 10 (AGC) → RTL2832U AGC Output (optional, for gain control)
+    Pin 19 (LNA) → Can be tied HIGH or controlled by RTL2832U for LNA operation
