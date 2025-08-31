@@ -29,39 +29,40 @@ python gsm_scanner_new2.py
     R828D (R820T-compatible) Pinout: Pin Number to Name
 
 The R828D is usually supplied in a 32-pin QFN package. Here’s the most commonly reported pinout:
-Pin	Name	Function
-1	VCC	Power supply
-2	VCO	PLL VCO
-3	VCOIN	PLL VCO input
-4	VCOGND	PLL VCO ground
-5	VCOBUF	PLL VCO buffer output
-6	XIN	Crystal oscillator input
-7	XOUT	Crystal oscillator out
-8	VCC	Power supply
-9	GND	Ground
-10	AGC	Automatic Gain Control
-11	IFOUT	Intermediate Frequency Output
-12	VCC	Power supply
-13	GND	Ground
-14	RF_IN	RF Input (from antenna)
-15	GND	Ground
-16	NC	Not Connected
-17	VCC	Power supply
-18	NC	Not Connected
-19	LNA	Low Noise Amp control
-20	VCC	Power supply
-21	GND	Ground
-22	NC	Not Connected
-23	SDA	I²C Data
-24	SCL	I²C Clock
-25	GND	Ground
-26	VCC	Power supply
-27	NC	Not Connected
-28	VCC	Power supply
-29	NC	Not Connected
-30	NC	Not Connected
-31	NC	Not Connected
-32	NC	Not Connected
-30	NC	Not Connected
+
+        Pin	Name	Function
+        1	VCC	Power supply
+        2	VCO	PLL VCO
+        3	VCOIN	PLL VCO input
+        4	VCOGND	PLL VCO ground
+        5	VCOBUF	PLL VCO buffer output
+        6	XIN	Crystal oscillator input
+        7	XOUT	Crystal oscillator out
+        8	VCC	Power supply
+        9	GND	Ground
+        10	AGC	Automatic Gain Control
+        11	IFOUT	Intermediate Frequency Output
+        12	VCC	Power supply
+        13	GND	Ground
+        14	RF_IN	RF Input (from antenna)
+        15	GND	Ground
+        16	NC	Not Connected
+        17	VCC	Power supply
+        18	NC	Not Connected
+        19	LNA	Low Noise Amp control
+        20	VCC	Power supply
+        21	GND	Ground
+        22	NC	Not Connected
+        23	SDA	I²C Data
+        24	SCL	I²C Clock
+        25	GND	Ground
+        26	VCC	Power supply
+        27	NC	Not Connected
+        28	VCC	Power supply
+        29	NC	Not Connected
+        30	NC	Not Connected
+        31	NC	Not Connected
+        32	NC	Not Connected
+        30	NC	Not Connected
 31	NC	Not Connected
 32	NC	Not Connected
