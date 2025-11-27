@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "ATX-11-F-32_000MHZ-F05-T"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2023-05-06-11:41:47)
+    (mountForm default
+        (footprintRef "ATX11F32000MHZF05T")
+        (spec "System")
+    )
+)

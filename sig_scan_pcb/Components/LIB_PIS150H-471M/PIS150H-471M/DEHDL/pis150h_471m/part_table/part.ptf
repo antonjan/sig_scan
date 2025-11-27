@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'PIS150H_471M'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "TDK", "PIS150H-471M" (!) = "", "PIS150H471M", "Other", "871-PIS150H-471M", "https://www.mouser.co.uk/ProductDetail/EPCOS-TDK/PIS150H-471M?qs=Y0Uzf4wQF3ncdYG5ACt1MQ%3D%3D", "Power Inductors - SMD Differential mode inductor 470 uH, 15.5x15.5 mm, PoDL 10BASE-T1L", "https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/data_sheet/30/db/ind_2008/pis150h.pdf", "14.5 mm"
+END_PART
+
+END.

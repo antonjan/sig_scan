@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "PIS150H-471M"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2024-01-15-13:13:43)
+    (mountForm default
+        (footprintRef "PIS150H471M")
+        (spec "System")
+    )
+)

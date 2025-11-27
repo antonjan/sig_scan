@@ -1,0 +1,9 @@
+Manufacturer=ABRACON
+PartNumber=ATX-11-F-32.000MHZ-F05-T
+PartCategory=Crystal or Oscillator
+PackageCategory=Other
+PinCount=4
+Version=2.3
+Released=2023-05-06 11:41:47
+Downloaded=2025-11-20 11:18:07
+3D=Y

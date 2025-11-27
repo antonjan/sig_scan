@@ -1,0 +1,16 @@
+.TCM1-382WX-plus- :1 ;Audio Transformers / Signal Transformers 1:1 CORE & WIRE Transformer, 0.5 - 3800 MHz, 50?
+TCM1382WX
+*STM T
+*NGS
+*PLB 1="GND_1" 2="GND_2" 3="PRIMARY DOT" 4="SECONDARY" 5="SECONDARY DOT" 6="NOT USED"
+*MXP 6
+*DFN TCM1-382WX-plus-
+~!Mouser Part Number (139-TCM1-382WX)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Mini-Circuits/TCM1-382WX%2b?qs=amGC7iS6iy9TpOSpP5xMJQ%3D%3D)
+~!Manufacturer_Name (Mini-Circuits)
+~!Manufacturer_Part_Number (TCM1-382WX+)
+~!Link Datasheet (https://www.mouser.kr/datasheet/2/1030/TCM1_382WX_2b-3105014.pdf)
+~!Height (4.06mm)
+~!3D_Model (TCM1-382WX+)
+TCM1-382WX-plus-
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 

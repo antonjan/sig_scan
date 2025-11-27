@@ -1,0 +1,9 @@
+Manufacturer=Texas Instruments
+PartNumber=BQ24650RVAR
+PartCategory=Integrated Circuit
+PackageCategory=Quad Flat No-Lead
+PinCount=17
+Version=3.1
+Released=2017-01-12 12:59:53
+Downloaded=2025-11-13 10:01:05
+3D=Y

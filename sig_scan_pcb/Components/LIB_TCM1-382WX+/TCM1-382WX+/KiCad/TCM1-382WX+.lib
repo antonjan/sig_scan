@@ -1,0 +1,27 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model TCM1-382WX+
+#/18523047/1265179/2.50/6/3/Transformer
+DEF TCM1-382WX+ T 0 30 Y Y 1 F N
+F0 "T" 1750 300 50 H V L CNN
+F1 "TCM1-382WX+" 1750 200 50 H V L CNN
+F2 "TCM1382WX" 1750 100 50 H I L CNN
+F3 "https://www.mouser.kr/datasheet/2/1030/TCM1_382WX_2b-3105014.pdf" 1750 0 50 H I L CNN
+F4 "Audio Transformers / Signal Transformers 1:1 CORE & WIRE Transformer, 0.5 - 3800 MHz, 50?" 1750 -100 50 H I L CNN "Description"
+F5 "4.06" 1750 -200 50 H I L CNN "Height"
+F6 "139-TCM1-382WX" 1750 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Mini-Circuits/TCM1-382WX%2b?qs=amGC7iS6iy9TpOSpP5xMJQ%3D%3D" 1750 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "Mini-Circuits" 1750 -500 50 H I L CNN "Manufacturer_Name"
+F9 "TCM1-382WX+" 1750 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X GND_1 1 1900 0 200 L 50 50 0 0 P
+X GND_2 2 1900 -100 200 L 50 50 0 0 P
+X PRIMARY_DOT 3 1900 -200 200 L 50 50 0 0 P
+X SECONDARY 4 0 -200 200 R 50 50 0 0 P
+X SECONDARY_DOT 5 0 -100 200 R 50 50 0 0 P
+X NOT_USED 6 0 0 200 R 50 50 0 0 P
+P 5 0 1 6 200 100 1700 100 1700 -300 200 -300 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library

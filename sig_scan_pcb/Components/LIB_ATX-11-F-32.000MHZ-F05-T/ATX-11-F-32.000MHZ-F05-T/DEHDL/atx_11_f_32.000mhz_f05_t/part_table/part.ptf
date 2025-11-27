@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'ATX_11_F_32.000MHZ_F05_T'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "ABRACON", "ATX-11-F-32.000MHZ-F05-T" (!) = "", "ATX11F32000MHZF05T", "Other", "815-ATX11F32000MF05T", "https://www.mouser.co.uk/ProductDetail/ABRACON/ATX-11-F-32.000MHz-F05-T?qs=iLbezkQI%252BsgUO3myvlQBdA%3D%3D", "32 MHz TCXO Clipped Sine Wave Oscillator 1.68V ~ 3.63V - 4-SMD, No Lead", "https://abracon.com/datasheets/ATX-11.pdf", "1.2 mm"
+END_PART
+
+END.

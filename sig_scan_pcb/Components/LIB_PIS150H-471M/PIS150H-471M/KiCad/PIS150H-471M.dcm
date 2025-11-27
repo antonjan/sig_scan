@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP PIS150H-471M
+D Power Inductors - SMD Differential mode inductor 470 uH, 15.5x15.5 mm, PoDL 10BASE-T1L
+K
+F https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/data_sheet/30/db/ind_2008/pis150h.pdf
+$ENDCMP
+#
+#End Doc Library

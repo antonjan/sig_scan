@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ATX-11-F-32.000MHZ-F05-T
+D 32 MHz TCXO Clipped Sine Wave Oscillator 1.68V ~ 3.63V - 4-SMD, No Lead
+K
+F https://abracon.com/datasheets/ATX-11.pdf
+$ENDCMP
+#
+#End Doc Library

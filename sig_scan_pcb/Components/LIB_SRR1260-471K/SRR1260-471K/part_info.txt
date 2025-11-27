@@ -1,0 +1,9 @@
+Manufacturer=Bourns
+PartNumber=SRR1260-471K
+PartCategory=Inductor
+PackageCategory=Other
+PinCount=2
+Version=2.3
+Released=2019-10-23 11:36:59
+Downloaded=2025-11-18 11:49:47
+3D=Y

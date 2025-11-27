@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "SRR1260-471K"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2019-10-23-11:36:59)
+    (mountForm default
+        (footprintRef "SRR12604R7Y")
+        (spec "System")
+    )
+)

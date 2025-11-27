@@ -1,0 +1,9 @@
+Manufacturer=TDK
+PartNumber=PIS150H-471M
+PartCategory=Inductor
+PackageCategory=Other
+PinCount=4
+Version=1.4
+Released=2024-01-15 13:13:43
+Downloaded=2025-11-18 11:59:33
+3D=Y

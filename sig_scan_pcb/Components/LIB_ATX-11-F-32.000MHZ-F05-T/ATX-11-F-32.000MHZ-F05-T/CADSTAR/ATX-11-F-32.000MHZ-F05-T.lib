@@ -1,0 +1,16 @@
+.ATX-11-F-32.000MHZ-F05-T :1 ;32 MHz TCXO Clipped Sine Wave Oscillator 1.68V ~ 3.63V - 4-SMD, No Lead
+ATX11F32000MHZF05T
+*STM Y
+*NGS
+*PLB 1="GND_1" 2="GND_2" 3="OUTPUT" 4="VDD"
+*MXP 4
+*DFN ATX-11-F-32.000MHZ-F05-T
+~!Mouser Part Number (815-ATX11F32000MF05T)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/ABRACON/ATX-11-F-32.000MHz-F05-T?qs=iLbezkQI%252BsgUO3myvlQBdA%3D%3D)
+~!Manufacturer_Name (ABRACON)
+~!Manufacturer_Part_Number (ATX-11-F-32.000MHZ-F05-T)
+~!Link Datasheet (https://abracon.com/datasheets/ATX-11.pdf)
+~!Height (1.2mm)
+~!3D_Model (ATX-11-F-32.000MHZ-F05-T)
+ATX-11-F-32.000MHZ-F05-T
+1.1!U 2.1!U 3.1!U 4.1!U 

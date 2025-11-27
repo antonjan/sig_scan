@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "PIS150H471M"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "PIS150H471M")
+        (spec "default")
+    )
+)

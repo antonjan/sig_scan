@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SRR1260-471K
+D Inductor Power Shielded Wirewound 470uH 10% 1KHz 18Q-Factor Ferrite 0.95A 0.82Ohm DCR T/R
+K
+F https://componentsearchengine.com/Datasheets/1/SRR1260-4R7Y.pdf
+$ENDCMP
+#
+#End Doc Library

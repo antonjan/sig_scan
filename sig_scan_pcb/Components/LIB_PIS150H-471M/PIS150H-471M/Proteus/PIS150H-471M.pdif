@@ -1,0 +1,125 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "PIS150H-471M"
+   (description "Power Inductors - SMD Differential mode inductor 470 uH, 15.5x15.5 mm, PoDL 10BASE-T1L")
+   (family "IND")
+   (package "PIS150H471M")
+   (attribute "Datasheet Link" "https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/data_sheet/30/db/ind_2008/pis150h.pdf")
+   (attribute "Geometry.Height" "14.5mm")
+   (attribute "Mouser Part Number" "871-PIS150H-471M")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/EPCOS-TDK/PIS150H-471M?qs=Y0Uzf4wQF3ncdYG5ACt1MQ%3D%3D")
+   (attribute "Manufacturer_Name" "TDK")
+   (attribute "Manufacturer_Part_Number" "PIS150H-471M")
+   (gate
+    (symbol "PIS150H-471M")
+    (pin "1" 1 PS)
+    (pin "2" 2 PS)
+    (pin "3" 3 PS)
+    (pin "4" 4 PS)
+   )
+  )
+  (symbol "PIS150H-471M"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 600 100) (pt 600 -200) (pt 200 -200) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 800 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 800 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "PIS150H471M"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -7.75 -7.75)
+      (pt 7.75 -7.75)
+      (pt 7.75 7.75)
+      (pt -7.75 7.75)
+      (pt -7.75 -7.75))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -8.75 -8.85)
+      (pt 8.75 -8.85)
+      (pt 8.75 8.85)
+      (pt -8.75 8.85)
+      (pt -8.75 -8.85))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -4 -7.75)
+      (pt -7.75 -7.75)
+      (pt -7.75 7.75)
+      (pt -4 7.75))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt 3.75 -7.75)
+      (pt 7.75 -7.75)
+      (pt 7.75 7.75)
+      (pt 4 7.75)
+      (pt 4 7.75))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.075 -8.4)
+      (arc (pt -2.075 -8.400) (pt -2.125 -8.400) (pt -2.025 -8.300) (start 180.0) (sweep -90.0))
+      (pt -2.075 -8.3)
+      (arc (pt -2.075 -8.300) (pt -2.125 -8.400) (pt -2.025 -8.300) (start 180.0) (sweep 90.0))
+      (pt -2.075 -8.4))))
+   (leg 1 (pt -2.025 -5.775) (padstack 0))
+   (leg 2 (pt 2.025 -5.775) (padstack 0))
+   (leg 3 (pt 2.025 5.775) (padstack 0))
+   (leg 4 (pt -2.025 5.775) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 2.550 4.150 0 0 90.000))
+   )
+   (model "PIS150H-471M.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

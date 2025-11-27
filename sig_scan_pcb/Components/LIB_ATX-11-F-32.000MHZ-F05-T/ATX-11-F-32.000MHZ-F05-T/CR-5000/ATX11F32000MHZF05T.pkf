@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "ATX11F32000MHZF05T"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "ATX11F32000MHZF05T")
+        (spec "default")
+    )
+)

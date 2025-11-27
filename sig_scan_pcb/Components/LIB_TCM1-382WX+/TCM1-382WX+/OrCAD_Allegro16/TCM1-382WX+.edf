@@ -1,0 +1,138 @@
+
+(EDIF
+  (rename &TCM1_382WX_ "TCM1_382WX_")
+  (EDIFVersion 2 0 0)
+  (EDIFLevel 0)
+  (keywordMap (keywordLevel 0))
+  (status
+    (written
+      (timestamp 2025 11 10 08 55 30)
+      (dataOrigin "18523047/1265179/2.50/6/3/Transformer")
+      (program "SamacSys ECAD Model TCM1_382WX_"
+        (version "1.2"))))
+  (library
+  (rename &TCM1_382WX_ "TCM1_382WX_")
+    (EDIFLevel 0)
+    (technology
+      (numberDefinition (scale 1 (e 254 -6) (unit DISTANCE)))
+      (userData GRIDRESOLUTION (integer 50 50))
+      (figureGroup DEFAULT (pathWidth 10) (textHeight 100))
+      (figureGroup PROPERTY (pathWidth 10) (textHeight 90))
+      (figureGroup PINNUMBER (pathWidth 10) (textHeight 90))
+      (figureGroup PINNAME (pathWidth 10) (textHeight 90))
+      (figureGroup COMMENT (pathWidth 10) (textHeight 90))
+      (figureGroup PIN (pathWidth 10) (textHeight 90))
+      (figureGroup GRAPHIC (pathWidth 10) (textHeight 100))
+    )
+    (cell
+      (rename &TCM1_382WX_ "TCM1_382WX_")
+      (cellType GENERIC)
+      (view
+        (rename NORMAL "Normal")
+        (viewType SCHEMATIC)
+        (interface
+          (designator "T")
+          (property (rename PACKAGENAME "PackageName") (string "TCM1_382WX_"))
+          (property (rename ISHETEROGENEOUS "IsHeterogeneous") (string "False"))
+          (property (rename DEVICESINVIEW "DevicesInView") (string "1"))
+          (property (rename DEVICESINPACKAGE "DevicesInPackage") (string "1"))
+          (property (rename DEVICEDESIGNATOR "DeviceDesignator") (string "A"))
+          (property (rename DEVICENUMBERING "DeviceNumbering") (string "Alpha"))
+          (property (rename PCB_32_FOOTPRINT "PCB Footprint") (string "TCM1382WX"))
+          (property (rename &Mouser_Part_Number "Mouser Part Number") (string "139-TCM1-382WX"))
+          (property (rename &Mouser_Price_Stock "Mouser Price/Stock") (string "https://www.mouser.co.uk/ProductDetail/Mini-Circuits/TCM1-382WX%2b?qs=amGC7iS6iy9TpOSpP5xMJQ%3D%3D"))
+          (property (rename &Manufacturer_Name "Manufacturer_Name") (string "Mini-Circuits"))
+          (property (rename &Manufacturer_Part_Number "Manufacturer_Part_Number") (string "TCM1-382WX+"))
+          (property (rename &Description "Description") (string "Audio Transformers / Signal Transformers 1:1 CORE & WIRE Transformer, 0.5 - 3800 MHz, 50?"))
+          (property (rename &Datasheet_Link "Datasheet Link") (string "https://www.mouser.kr/datasheet/2/1030/TCM1_382WX_2b-3105014.pdf"))
+          (property (rename &Height "Height") (string "4.06 mm"))
+          (property (rename &_60__32_VALUE_32__62_ "Value") (string "TCM1_382WX_"))
+          (property (rename VALUE "Value") (string "Value"))
+          (port
+            (rename &GND_1 "GND_1")
+            (designator "1")
+            (property (rename ORDER "Order") (string "0") (owner "OrCAD"))
+          )
+          (port
+            (rename &GND_2 "GND_2")
+            (designator "2")
+            (property (rename ORDER "Order") (string "1") (owner "OrCAD"))
+          )
+          (port
+            (rename &PRIMARY_DOT "PRIMARY_DOT")
+            (designator "3")
+            (property (rename ORDER "Order") (string "2") (owner "OrCAD"))
+          )
+          (port
+            (rename &SECONDARY "SECONDARY")
+            (designator "4")
+            (property (rename ORDER "Order") (string "3") (owner "OrCAD"))
+          )
+          (port
+            (rename &SECONDARY_DOT "SECONDARY_DOT")
+            (designator "5")
+            (property (rename ORDER "Order") (string "4") (owner "OrCAD"))
+          )
+          (port
+            (rename &NOT_USED "NOT_USED")
+            (designator "6")
+            (property (rename ORDER "Order") (string "5") (owner "OrCAD"))
+          )
+          (symbol
+            (portImplementation
+              (name &GND_1 (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt 1500 -100) (pt 1700 -100))))
+              (connectLocation (figure GRAPHIC (dot (pt 1700 -100))))
+            )
+            (portImplementation
+              (name &GND_2 (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt 1500 -200) (pt 1700 -200))))
+              (connectLocation (figure GRAPHIC (dot (pt 1700 -200))))
+            )
+            (portImplementation
+              (name &PRIMARY_DOT (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt 1500 -300) (pt 1700 -300))))
+              (connectLocation (figure GRAPHIC (dot (pt 1700 -300))))
+            )
+            (portImplementation
+              (name &SECONDARY (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt -200 -300) (pt 0 -300))))
+              (connectLocation (figure GRAPHIC (dot (pt -200 -300))))
+            )
+            (portImplementation
+              (name &SECONDARY_DOT (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt -200 -200) (pt 0 -200))))
+              (connectLocation (figure GRAPHIC (dot (pt -200 -200))))
+            )
+            (portImplementation
+              (name &NOT_USED (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt -200 -100) (pt 0 -100))))
+              (connectLocation (figure GRAPHIC (dot (pt -200 -100))))
+            )
+            (figure GRAPHIC
+              (figureGroupOverride GRAPHIC
+                (pathWidth 10))
+              (path
+                (pointList
+                  (pt 0 0)
+                  (pt 1500 0)
+                  (pt 1500 -400)
+                  (pt 0 -400)
+                  (pt 0 0)
+                )
+              )
+            )
+            (keywordDisplay DESIGNATOR (display PROPERTY (justify LOWERLEFT) (orientation R0) (origin (pt 1550 130))))
+            (propertyDisplay &_60__32_VALUE_32__62_ (display PROPERTY (justify LOWERLEFT) (orientation R0) (origin (pt 1550 30))))
+          )
+        )
+      )
+    )
+  )
+)

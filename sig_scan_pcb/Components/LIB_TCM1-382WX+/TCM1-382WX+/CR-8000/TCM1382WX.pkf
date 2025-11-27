@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "TCM1382WX"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "TCM1382WX")
+        (spec "default")
+    )
+)

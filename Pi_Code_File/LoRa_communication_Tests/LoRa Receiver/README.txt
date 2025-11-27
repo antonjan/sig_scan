@@ -1,0 +1,1 @@
+In this folder we added the Code for the Transmitter side (SX1262 868M LoRa HAT), the receiver side (USB-TO-LoRa-HF), a diagram PNG of our process and a PNG of GQRX to show that the transmitter is sending.

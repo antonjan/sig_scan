@@ -1,0 +1,132 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "TCM1-382WX+"
+   (description "Audio Transformers / Signal Transformers 1:1 CORE & WIRE Transformer, 0.5 - 3800 MHz, 50?")
+   (family "XFR")
+   (package "TCM1382WX")
+   (attribute "Datasheet Link" "https://www.mouser.kr/datasheet/2/1030/TCM1_382WX_2b-3105014.pdf")
+   (attribute "Geometry.Height" "4.06mm")
+   (attribute "Mouser Part Number" "139-TCM1-382WX")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Mini-Circuits/TCM1-382WX%2b?qs=amGC7iS6iy9TpOSpP5xMJQ%3D%3D")
+   (attribute "Manufacturer_Name" "Mini-Circuits")
+   (attribute "Manufacturer_Part_Number" "TCM1-382WX+")
+   (gate
+    (symbol "TCM1-382WX+")
+    (pin "GND_1" 1 PS)
+    (pin "GND_2" 2 PS)
+    (pin "PRIMARY_DOT" 3 PS)
+    (pin "SECONDARY" 4 PS)
+    (pin "SECONDARY_DOT" 5 PS)
+    (pin "NOT_USED" 6 PS)
+   )
+  )
+  (symbol "TCM1-382WX+"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 1700 100) (pt 1700 -300) (pt 200 -300) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 1900 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1900 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1900 -200) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -200) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "TCM1382WX"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -1.905 1.52)
+      (pt 1.905 1.52)
+      (pt 1.905 -1.52)
+      (pt -1.905 -1.52)
+      (pt -1.905 1.52))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.905 3.415)
+      (pt 2.905 3.415)
+      (pt 2.905 -3.415)
+      (pt -2.905 -3.415)
+      (pt -2.905 3.415))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -1.27 2.8)
+      (arc (pt -1.270 2.800) (pt -1.320 2.800) (pt -1.220 2.900) (start 180.0) (sweep -90.0))
+      (pt -1.27 2.9)
+      (arc (pt -1.270 2.900) (pt -1.320 2.800) (pt -1.220 2.900) (start 180.0) (sweep 90.0))
+      (pt -1.27 2.8))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -1.905 0.4)
+      (pt -1.905 -0.4))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt 1.905 0.4)
+      (pt 1.905 -0.4))))
+   (leg 1 (pt -1.270 1.590) (padstack 0))
+   (leg 2 (pt 0.000 1.590) (padstack 0))
+   (leg 3 (pt 1.270 1.590) (padstack 0))
+   (leg 4 (pt 1.270 -1.590) (padstack 0))
+   (leg 5 (pt 0.000 -1.590) (padstack 0))
+   (leg 6 (pt -1.270 -1.590) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 0.760 1.650 0 0 90.000))
+   )
+   (model "TCM1-382WX+.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BQ24650RVAR
+D High Efficiency Synchronous Switch-Mode Charger Controller  Solar Battery Charger
+K
+F http://www.ti.com/lit/gpn/BQ24650
+$ENDCMP
+#
+#End Doc Library

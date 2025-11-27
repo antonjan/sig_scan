@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'BQ24650RVAR'
+CLASS = IC
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Texas Instruments", "BQ24650RVAR" (!) = "", "QFN50P350X350X100-17N-D", "Quad Flat No-Lead", "595-BQ24650RVAR", "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/BQ24650RVAR?qs=0zjllh%252Bnl7YoFsOK3aOUFA%3D%3D", "High Efficiency Synchronous Switch-Mode Charger Controller  Solar Battery Charger", "http://www.ti.com/lit/gpn/BQ24650", "1 mm"
+END_PART
+
+END.

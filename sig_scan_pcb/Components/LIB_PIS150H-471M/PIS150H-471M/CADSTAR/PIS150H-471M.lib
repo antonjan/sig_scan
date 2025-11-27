@@ -1,0 +1,16 @@
+.PIS150H-471M :1 ;Power Inductors - SMD Differential mode inductor 470 uH, 15.5x15.5 mm, PoDL 10BASE-T1L
+PIS150H471M
+*STM L
+*NGS
+*PLB 1="1" 2="2" 3="3" 4="4"
+*MXP 4
+*DFN PIS150H-471M
+~!Mouser Part Number (871-PIS150H-471M)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/EPCOS-TDK/PIS150H-471M?qs=Y0Uzf4wQF3ncdYG5ACt1MQ%3D%3D)
+~!Manufacturer_Name (TDK)
+~!Manufacturer_Part_Number (PIS150H-471M)
+~!Link Datasheet (https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/data_sheet/30/db/ind_2008/pis150h.pdf)
+~!Height (14.5mm)
+~!3D_Model (PIS150H-471M)
+PIS150H-471M
+1.1!U 2.1!U 3.1!U 4.1!U 

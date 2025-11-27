@@ -1,0 +1,120 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "ATX-11-F-32.000MHZ-F05-T"
+   (description "32 MHz TCXO Clipped Sine Wave Oscillator 1.68V ~ 3.63V - 4-SMD, No Lead")
+   (family "OSC")
+   (package "ATX11F32000MHZF05T")
+   (attribute "Datasheet Link" "https://abracon.com/datasheets/ATX-11.pdf")
+   (attribute "Geometry.Height" "1.2mm")
+   (attribute "Mouser Part Number" "815-ATX11F32000MF05T")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/ABRACON/ATX-11-F-32.000MHz-F05-T?qs=iLbezkQI%252BsgUO3myvlQBdA%3D%3D")
+   (attribute "Manufacturer_Name" "ABRACON")
+   (attribute "Manufacturer_Part_Number" "ATX-11-F-32.000MHZ-F05-T")
+   (gate
+    (symbol "ATX-11-F-32.000MHZ-F05-T")
+    (pin "GND_1" 1 PS)
+    (pin "GND_2" 2 PS)
+    (pin "OUTPUT" 3 PS)
+    (pin "VDD" 4 PS)
+   )
+  )
+  (symbol "ATX-11-F-32.000MHZ-F05-T"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 1100 100) (pt 1100 -200) (pt 200 -200) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1300 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1300 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "ATX11F32000MHZF05T"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -1.6 1.25)
+      (pt 1.6 1.25)
+      (pt 1.6 -1.25)
+      (pt -1.6 -1.25)
+      (pt -1.6 1.25))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.8 2.4)
+      (pt 2.8 2.4)
+      (pt 2.8 -2.4)
+      (pt -2.8 -2.4)
+      (pt -2.8 2.4))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -0.2 1.25)
+      (pt 0.2 1.25))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -0.2 -1.25)
+      (pt 0.2 -1.25))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.4 -0.8)
+      (arc (pt -2.400 -0.800) (pt -2.400 -0.850) (pt -2.300 -0.750) (start 180.0) (sweep 180.0))
+      (pt -2.3 -0.8)
+      (arc (pt -2.300 -0.800) (pt -2.400 -0.850) (pt -2.300 -0.750) (start 180.0) (sweep .0))
+      (pt -2.4 -0.8))))
+   (leg 1 (pt -1.100 -0.800) (padstack 0))
+   (leg 2 (pt 1.100 -0.800) (padstack 0))
+   (leg 3 (pt 1.100 0.800) (padstack 0))
+   (leg 4 (pt -1.100 0.800) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 1.200 1.400 0 0 0.000))
+   )
+   (model "ATX-11-F-32.000MHZ-F05-T.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)
